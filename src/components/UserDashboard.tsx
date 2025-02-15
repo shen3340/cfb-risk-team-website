@@ -1,10 +1,11 @@
 import React from 'react';
+const current_stars = 5;
 
 const UserDashboard: React.FC = () => {
   return (
     <div style={containerStyle}>
-      <h1>Welcome, User!</h1>
-      <p>You are logged in, but you are not an admin.</p>
+      <h1>Greetings, Shen3340</h1>
+      <h2 className="stars">{"✯".repeat(current_stars)}</h2>
     </div>
   );
 };

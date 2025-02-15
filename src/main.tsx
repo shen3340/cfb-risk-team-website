@@ -13,7 +13,7 @@ const router = createBrowserRouter([
     element: <App />, // Main app with header, footer, and form
   },
   {
-    path: "/dashboard",
+    path: "/cfb-risk-team-website/dashboard",
     element: <UserDashboard />, // New page to navigate to
   },
 ]);

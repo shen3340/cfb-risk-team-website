@@ -4,7 +4,7 @@ const Form = () => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate("/dashboard"); // Redirect to the AnotherPage route
+    navigate("/cfb-risk-team-website/dashboard"); // Redirect to the AnotherPage route
   };
 
   return (
