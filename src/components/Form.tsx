@@ -9,8 +9,7 @@ const Form = () => {
 
   return (
     <div>
-      <h2>Form Page</h2>
-      <button onClick={handleClick}>Go to Another Page</button>
+      <button onClick={handleClick}>Sign In (skipping auth for now)</button>
     </div>
   );
 };
