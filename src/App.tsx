@@ -3,7 +3,6 @@ import Header from './components/Header';
 import Form from './components/Form';
 import './stylesheet.css'; 
 
-
 const App: React.FC = () => {
   return (
     <div>
