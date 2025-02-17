@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import App from "./App";
 import UserDashboard from "./components/UserDashboard";
+import ConfirmationPage from "./components/ConfirmationPage";
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
     path: "/cfb-risk-team-website/dashboard",
     element: <UserDashboard />, // New page to navigate to
   },
+  {
+    path: "/cfb-risk-team-website/confirmation",
+    element: <ConfirmationPage />,
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
