@@ -3,7 +3,7 @@ body {
     text-align: center;
     width: 100%;
     margin: 0px;
-    background: #ba0c2f;
+    background: #eadddf;
     --OSU-scarlet: #ba0c2f;
     --OSU-grey: #a7b1b7;
     /* LOGO FONT IS PRIMA SANS */
@@ -44,7 +44,7 @@ p {
     margin-right: auto;
 }
 button {
-    padding: 10px;
+    padding: 1px;
     font-size: 1.5em;
     margin: .1em;
 }
@@ -66,8 +66,6 @@ button {
     border: solid 1px var(--OSU-grey);
     outline: none;*/
 }
-
-
 
 #orders-container {
     overflow-x: auto;

@@ -13,9 +13,15 @@ const ConfirmationPage: React.FC = () => {
 
   return (
     <div style={containerStyle}>
-      <h1>Confirmation</h1>
       <h2>Thank you, <strong>{selectedUsername}</strong></h2>
       <p>You chose <strong>{selectedTerritory || "No Territory Selected"}</strong></p>
+      <p>Thank you for confirming your order. Good luck out there, solider.</p>
+      <h2>
+        Remember to submit your move on{" "}
+        <a href="https://collegefootballrisk.com" target="_blank" rel="noopener noreferrer">
+          CollegeFootballRisk.com
+        </a>
+      </h2>
     </div>
   );
 };

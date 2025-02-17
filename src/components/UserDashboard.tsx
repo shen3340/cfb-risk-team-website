@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom"; // Import navigation
+import Stars from "./Stars"; // Import the Stars class
 
 const UserDashboard: React.FC = () => {
   const [username, setUsername] = useState<string>("shen3340$0");
@@ -77,8 +78,6 @@ const handleTerritoryClick = (territory: string, username: string) => {
   navigate("/cfb-risk-team-website/confirmation"); // Redirect to confirmation page
 };
 
-  
-
   return (
     <div style={containerStyle}>
       <h1>Greetings, {username}</h1>
@@ -89,23 +88,20 @@ const handleTerritoryClick = (territory: string, username: string) => {
         placeholder="Enter username"
       />
       <h1 className="stars">{"✯".repeat(currentStars)}</h1>
-      <h2>Today is <span>{currentDate}</span>.</h2>
+      <h3>Today is <span>{currentDate}</span>.</h3>
       {error && <p style={{ color: "red" }}>{error}</p>}
-      <h2>Click one of the buttons to submit your deployment, soldier!</h2>
-      <h2>
-        Please submit your move at{" "}
-        <a href="https://collegefootballrisk.com" target="_blank" rel="noopener noreferrer">
-          CollegeFootballRisk.com
-        </a>
-      </h2>
-
-      {/* Territory Buttons */}
-      <h2>Your Assigned Territories:</h2>
+      <h3>Click one of the buttons to submit your deployment, soldier!</h3>
       {territories.slice(0, currentStars).map((territory, index) => (
         <button key={index} onClick={() => handleTerritoryClick(territory, username)} style={buttonStyle}>
           {territory}
         </button>
       ))}
+      <h3>
+        Please submit your move at{" "}
+        <a href="https://collegefootballrisk.com" target="_blank" rel="noopener noreferrer">
+          CollegeFootballRisk.com
+        </a>
+      </h3>
     </div>
   );
 };
@@ -128,38 +124,5 @@ const buttonStyle: React.CSSProperties = {
   border: "none",
   borderRadius: "5px",
 };
-
-// Class for calculating stars remains unchanged
-class Stars {
-  countStars(totalTurns: number, gameTurns: number, mvps: number, streak: number): number {
-    const star1 = this.totalTurnStars(totalTurns);
-    const star2 = this.gameTurnStars(gameTurns);
-    const star3 = this.mvpStars(mvps);
-    const star4 = this.streakStars(streak);
-    return Math.ceil(this.median([star1, star2, star3, star4]));
-  }
-
-  private median(values: number[]): number {
-    values.sort((a, b) => a - b);
-    const mid = Math.floor(values.length / 2);
-    return values.length % 2 !== 0 ? values[mid] : (values[mid - 1] + values[mid]) / 2;
-  }
-
-  private streakStars(streak: number): number {
-    return streak > 24 ? 5 : streak > 9 ? 4 : streak > 4 ? 3 : streak > 2 ? 2 : 1;
-  }
-
-  private mvpStars(mvps: number): number {
-    return mvps > 24 ? 5 : mvps > 9 ? 4 : mvps > 4 ? 3 : mvps > 0 ? 2 : 1;
-  }
-
-  private gameTurnStars(gameTurns: number): number {
-    return gameTurns > 39 ? 5 : gameTurns > 24 ? 4 : gameTurns > 9 ? 3 : gameTurns > 4 ? 2 : 1;
-  }
-
-  private totalTurnStars(totalTurns: number): number {
-    return totalTurns > 99 ? 5 : totalTurns > 49 ? 4 : totalTurns > 24 ? 3 : totalTurns > 9 ? 2 : 1;
-  }
-}
 
 export default UserDashboard;
