@@ -1,15 +1,13 @@
-import { useNavigate } from "react-router-dom";
-
 const Form = () => {
-  const navigate = useNavigate();
 
-  const handleClick = () => {
-    navigate("/cfb-risk-team-website/dashboard"); // Redirect to the AnotherPage route
+  const handleLoginClick = () => {
+    // Redirect to your backend's /auth/discord route
+    window.location.href = "http://localhost:3001/auth/discord";
   };
 
   return (
     <div>
-      <button onClick={handleClick}>Sign In (skipping auth for now)</button>
+      <button onClick={handleLoginClick}>Sign In (skipping auth for now)</button>
     </div>
   );
 };
