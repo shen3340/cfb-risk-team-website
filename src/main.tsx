@@ -7,6 +7,7 @@ import {
 import App from "./App";
 import UserDashboard from "./components/UserDashboard";
 import ConfirmationPage from "./components/ConfirmationPage";
+import Admin from "./components/Admin";
 
 const router = createBrowserRouter([
   {
@@ -20,7 +21,11 @@ const router = createBrowserRouter([
   {
     path: "/cfb-risk-team-website/confirmation",
     element: <ConfirmationPage />,
-  }
+  },
+  {
+    path: "/cfb-risk-team-website/Admin",
+    element: <Admin />,
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(

@@ -1,17 +1,10 @@
-import { useState } from "react";
 const Form = () => {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   const handleLoginClick = () => {
-    if (!isAuthenticated) {
-      // Redirect to your backend's /auth/discord route if not authenticated
-      window.location.href = "http://localhost:3001/auth/discord";
-      setIsAuthenticated(true);
-    } else {
-      // Optionally, handle what happens if the user is already authenticated
-      console.log("User is already authenticated");
-    }
+    window.location.href =
+      "https://discord.com/oauth2/authorize?client_id=1341159037881815103&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A5173%2Fcfb-risk-team-website%2Fdashboard&scope=identify";
   };
+  
 
   return (
     <div>
